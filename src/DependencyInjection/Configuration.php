@@ -14,9 +14,8 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
 
-            ->booleanNode('maintenance')
+            ->booleanNode('activate')
             ->defaultValue(false)
-            ->isRequired()
             ->end()
 
             ->end();
