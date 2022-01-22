@@ -21,8 +21,8 @@ class RequestListener
             $content = $this->container->get('twig')->render("@CoaMaintenance/home/index.html.twig",[]);
             $response = new Response();
             $response->setContent($content);
-            $response->headers->set("Location","/maintenance");
-            $response->setStatusCode(Response::HTTP_TEMPORARY_REDIRECT);
+            //$response->headers->set("Location","/maintenance");
+            $response->setStatusCode(Response::HTTP_OK);
             $event->setResponse($response);
             $event->stopPropagation();
         }
