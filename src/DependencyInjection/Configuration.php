@@ -15,6 +15,7 @@ class Configuration implements ConfigurationInterface
             ->children()
 
             ->booleanNode('maintenance')
+            ->defaultValue(false)
             ->isRequired()
             ->end()
 
