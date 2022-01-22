@@ -18,13 +18,15 @@ class RequestListener
     public function onKernelRequest(RequestEvent $event)
     {
         if($event->isMainRequest()){
-            $content = $this->container->get('twig')->render("@CoaMaintenance/home/index.html.twig",[]);
-            $response = new Response();
-            $response->setContent($content);
-            //$response->headers->set("Location","/maintenance");
-            $response->setStatusCode(Response::HTTP_OK);
-            $event->setResponse($response);
-            $event->stopPropagation();
+            if(file_exists($this->container->getParameter('%kernel.project_dir%/.maintenance'))){
+                $content = $this->container->get('twig')->render("@CoaMaintenance/home/index.html.twig",[]);
+                $response = new Response();
+                $response->setContent($content);
+                $response->headers->set("Cache-Control","public, max-age=300");
+                $response->setStatusCode(Response::HTTP_OK);
+                $event->setResponse($response);
+                $event->stopPropagation();
+            }
         }
     }
 }
