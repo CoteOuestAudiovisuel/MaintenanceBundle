@@ -18,7 +18,7 @@ class RequestListener
     public function onKernelRequest(RequestEvent $event)
     {
         if($event->isMainRequest()){
-            if(file_exists($this->container->getParameter('%kernel.project_dir%')."/.maintenance")){
+            if(file_exists($this->container->getParameter('kernel.project_dir')."/.maintenance")){
                 $content = $this->container->get('twig')->render("@CoaMaintenance/home/index.html.twig",[]);
                 $response = new Response();
                 $response->setContent($content);
