@@ -18,7 +18,7 @@ class RequestListener
     public function onKernelRequest(RequestEvent $event)
     {
         if($event->isMainRequest()){
-            $response = $this->container->get('twig')->render("@CoaMaintenance/home/index.html.twid",[]);
+            $response = $this->container->get('twig')->render("@CoaMaintenance/home/index.html.twig",[]);
             $response->headers->set("Location","/maintenance");
             $response->setStatusCode(Response::HTTP_TEMPORARY_REDIRECT);
             $event->setResponse($response);
