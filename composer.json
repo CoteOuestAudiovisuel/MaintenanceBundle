@@ -1,0 +1,24 @@
+{
+    "name": "coa/maintenance-bundle",
+    "description": "Mettre la plateforme en mode maintenance",
+    "type": "symfony-bundle",
+    "minimum-stability": "dev",
+    "prefer-stable": false,
+    "require": {
+        "symfony/framework-bundle": "^5.2",
+        "symfony/asset": "5.3.*"
+    },
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "Coa\\MaintenanceBundle\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "senateurritchie",
+            "email": "zakeszako@yahoo.fr",
+            "role": "Lead Developer"
+        }
+    ]
+}
