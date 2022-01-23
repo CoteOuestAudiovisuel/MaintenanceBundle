@@ -1,5 +1,4 @@
 <?php
-
 namespace Coa\MaintenanceBundle;
 
 use Symfony\Component\Console\Command\Command;
