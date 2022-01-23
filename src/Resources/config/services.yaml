@@ -24,3 +24,7 @@ services:
     Coa\MaintenanceBundle\EventListener\RequestListener:
         tags:
             - { name: kernel.event_listener, event: kernel.request }
+
+    Coa\MaintenanceBundle\Command\MaintenanceCommand:
+        tags:
+            - { name: console.command, command: 'coa:maintenance' }
