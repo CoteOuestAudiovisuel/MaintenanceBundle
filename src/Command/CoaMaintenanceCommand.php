@@ -9,7 +9,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class MaintenanceCommand extends Command
+class CoaMaintenanceCommand extends Command
 {
     protected static $defaultName = 'coa:maintenance';
     protected static $defaultDescription = 'Mets le site en mode maintenance';
