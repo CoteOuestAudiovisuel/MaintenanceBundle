@@ -5,9 +5,15 @@
     "minimum-stability": "dev",
     "prefer-stable": false,
     "require": {
+        "php": ">=7.4",
         "symfony/framework-bundle": "^5.2",
         "symfony/asset": "5.3.*",
-        "sensio/framework-extra-bundle": "^6.2"
+        "sensio/framework-extra-bundle": "^6.2",
+        "doctrine/annotations": "^1.0",
+        "doctrine/doctrine-bundle": "^2.4",
+        "doctrine/doctrine-migrations-bundle": "^3.1",
+        "doctrine/orm": "^2.9",
+        "ext-json": "*"
     },
     "license": "proprietary",
     "autoload": {
