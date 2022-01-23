@@ -7,8 +7,7 @@
     "require": {
         "symfony/framework-bundle": "^5.2",
         "symfony/asset": "5.3.*",
-        "sensio/framework-extra-bundle": "^6.2",
-        "symfony/console": "5.4.x-dev"
+        "sensio/framework-extra-bundle": "^6.2"
     },
     "license": "proprietary",
     "autoload": {
