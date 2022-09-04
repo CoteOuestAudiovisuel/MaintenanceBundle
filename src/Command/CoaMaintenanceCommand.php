@@ -7,15 +7,15 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface;
 
 class CoaMaintenanceCommand extends Command
 {
     protected static $defaultName = 'coa:maintenance';
     protected static $defaultDescription = 'Mets le site en mode maintenance';
-    private ContainerInterface $container;
+    private ContainerBagInterface $container;
 
-    public function __construct(string $name = null,ContainerInterface $container)
+    public function __construct(string $name = null,ContainerBagInterface $container)
     {
         parent::__construct($name);
         $this->container = $container;
@@ -35,7 +35,7 @@ class CoaMaintenanceCommand extends Command
         $io->title("Mode maintenance");
 
         // activation du mode maintenance
-        $filename = $this->container->getParameter('kernel.project_dir') . "/.maintenance";
+        $filename = $this->container->get('kernel.project_dir') . "/.maintenance";
         if($mode == true){
             $io->note("Activation mode maintenance");
             if(!file_exists($filename)){
